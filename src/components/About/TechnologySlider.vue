@@ -3,9 +3,9 @@
     <Vue3Marquee>
       <img src="@/assets/images/HTML5.svg" alt="html" />
       <img src="@/assets/images/css3.svg" alt="css" />
+      <img src="@/assets/images/javascript.svg" alt="javascript" />
       <img src="@/assets/images/vue.svg" alt="vue" />
       <img src="@/assets/images/react.svg" alt="react" />
-      <img src="@/assets/images/javascript.svg" alt="javascript" />
       <img src="@/assets/images/shopify.svg" alt="shopify" />
       <img src="@/assets/images/figma.svg" alt="figma" />
       <img src="@/assets/images/cypress.svg" alt="cypress" />

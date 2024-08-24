@@ -61,9 +61,9 @@ export default {
 
   button {
     border: none;
-    background: rgb(116, 115, 115);
+    background: black;
     border-radius: 6px;
-    color: rgb(169, 169, 169);
+    color: white;
     padding: 10px;
     width: 100px;
     height: 30px;
