@@ -6,22 +6,24 @@
         <img src="@/assets/images/dev.svg" alt="" />
         <h2>Web Development</h2>
         <p>{{ webDevelopment }}</p>
-        <button>View Work</button>
       </div>
 
       <div class="card">
         <img src="@/assets/images/dev.svg" alt="" />
         <h2>E-commerce</h2>
         <p>{{ ecommerce }}</p>
-        <button>View Work</button>
       </div>
 
       <div class="card">
         <img src="@/assets/images/dev.svg" alt="" />
         <h2>Seo</h2>
         <p>{{ seo }}</p>
-        <button>View Work</button>
       </div>
+    </div>
+    <div class="work">
+      <router-link to="/my-projects"
+        ><button id="work">View Work</button></router-link
+      >
     </div>
   </div>
 </template>
@@ -58,15 +60,29 @@ export default {
   color: black;
   font-size: 14px;
   text-align: left;
-
-  button {
-    border: none;
-    background: black;
-    border-radius: 6px;
-    color: white;
-    padding: 10px;
-    width: 100px;
-    height: 30px;
-  }
+}
+.work {
+  display: flex;
+  justify-content: center;
+  margin-top: 3%;
+}
+.work a {
+  text-decoration: none;
+}
+#work {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background: black;
+  border-radius: 6px;
+  color: white;
+  padding: 10px;
+  width: 120px;
+  height: 44px;
+  font-size: 16px;
+}
+#work:hover {
+  background-color: #333;
 }
 </style>

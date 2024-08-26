@@ -68,8 +68,8 @@ export default {
 .form-input {
   flex: 1;
   margin-right: 10px;
-  padding: 10px;
-  border: 1px solid black;
+  padding: 15px;
+  border: 1px solid lightgray;
   border-radius: 4px;
 }
 
@@ -79,8 +79,8 @@ export default {
 
 .form-textarea {
   width: 100%;
-  padding: 10px;
-  border: 1px solid black;
+  padding: 15px;
+  border: 1px solid lightgray;
   border-radius: 4px;
   resize: vertical;
   min-height: 100px;

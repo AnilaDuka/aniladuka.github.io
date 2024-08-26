@@ -9,7 +9,7 @@
       <img src="@/assets/images/shopify.svg" alt="shopify" />
       <img src="@/assets/images/figma.svg" alt="figma" />
       <img src="@/assets/images/cypress.svg" alt="cypress" />
-      <img src="@/assets/images/github.svg" alt="github" />
+      <img src="@/assets/images/tailwind.svg" alt="tailwind" />
       <img src="@/assets/images/aws.svg" alt="aws" />
       <img src="@/assets/images/bootstrap.svg" alt="bootstrap" />
     </Vue3Marquee>

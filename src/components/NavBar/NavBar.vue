@@ -1,13 +1,13 @@
 <template>
   <nav>
     <div class="links">
-      <button class="cv">CV</button>
-      <router-link to="">
+      <a href="/Anila Duka - CV.pdf"><button class="cv">CV</button></a>
+      <a href="mailto: aniladukaa@gmail.com">
         <span>aniladukaa@gmail.com</span>
-      </router-link>
+      </a>
     </div>
     <div>
-      <router-link to="">
+      <router-link to="/">
         <button class="cv">Contact</button>
       </router-link>
     </div>
