@@ -6,16 +6,23 @@
         <span>aniladukaa@gmail.com</span>
       </a>
     </div>
-    <div>
-      <router-link to="/">
-        <button class="cv">Contact</button>
-      </router-link>
+    <div @click="scrollToContact">
+      <button class="cv">Contact</button>
     </div>
   </nav>
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    scrollToContact() {
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    },
+  },
+};
 </script>
 
 <style scoped>

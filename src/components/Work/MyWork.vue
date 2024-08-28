@@ -1,95 +1,52 @@
 <template>
   <div class="page">
-    <router-link to="/"
-      ><span>{{ back }}</span></router-link
-    >
+    <div class="redirect">
+      <router-link to="/">
+        <span>{{ back }}</span>
+      </router-link>
+    </div>
     <div class="allProjects">
-      <div class="project">
-        <div>
-          <img src="@/assets/images/spimSaaS.svg" alt="Spim SaaS" />
-          <h2>Spim SaaS</h2>
-          <p>Spim is a web app...</p>
+      <router-link
+        v-for="project in projects"
+        :to="project.route"
+        :key="project.name"
+        class="projectLink"
+      >
+        <div class="project">
+          <img
+            :src="project.thumbnail"
+            :alt="project.name"
+            class="projectImage"
+          />
+          <div class="projectContent">
+            <h2 class="projectTitle">{{ project.name }}</h2>
+            <p class="projectDescription">
+              {{ truncateDescription(project.description) }}
+            </p>
+          </div>
         </div>
-        <div>
-          <button>View More</button>
-        </div>
-      </div>
-
-      <div class="project">
-        <div>
-          <img src="@/assets/images/digitWebsite.svg" alt="DigIT Website" />
-          <h2>DigIT Website</h2>
-          <p>DigIT Website is a project...</p>
-        </div>
-        <div>
-          <button>View More</button>
-        </div>
-      </div>
-
-      <div class="project">
-        <div>
-          <img src="@/assets/images/spimWebsite.svg" alt="Spim Website" />
-          <h2>Spim Website</h2>
-          <p>Spim is a web app...</p>
-        </div>
-        <div>
-          <button>View More</button>
-        </div>
-      </div>
-
-      <div class="project">
-        <div>
-          <img src="@/assets/images/biteCosmetics.svg" alt="Bite Cosmetics" />
-          <h2>Bite Cosmetics</h2>
-          <p>Spim is a web app...</p>
-        </div>
-        <div>
-          <button>View More</button>
-        </div>
-      </div>
-
-      <div class="project">
-        <div>
-          <img src="@/assets/images/hmdEcommerce.svg" alt="HMD E-commerce" />
-          <h2>Handmade Dresses E-commerce</h2>
-          <p>Spim is a web app...</p>
-        </div>
-        <div>
-          <button>View More</button>
-        </div>
-      </div>
-
-      <div class="project">
-        <div>
-          <img src="@/assets/images/digitWebsite.svg" alt="DigIT Website" />
-          <h2>Ciel De Beaute Website</h2>
-          <p>Spim is a web app...</p>
-        </div>
-        <div>
-          <button>View More</button>
-        </div>
-      </div>
-
-      <div class="project">
-        <div>
-          <img src="@/assets/images/digitWebsite.svg" alt="DigIT Website" />
-          <h2>PopHR Website</h2>
-          <p>Spim is a web app...</p>
-        </div>
-        <div>
-          <button>View More</button>
-        </div>
-      </div>
+      </router-link>
     </div>
   </div>
 </template>
 
 <script>
+import { projects } from '@/projects';
+
 export default {
   data() {
     return {
-      back: '<- Go back',
+      back: 'Back to Home',
+      projects,
     };
+  },
+  methods: {
+    truncateDescription(description, wordLimit = 20) {
+      if (!description) return '';
+      const words = description.split(' ');
+      if (words.length <= wordLimit) return description;
+      return words.slice(0, wordLimit).join(' ') + '...';
+    },
   },
 };
 </script>
@@ -97,27 +54,59 @@ export default {
 <style scoped>
 .page {
   width: 80%;
-  margin: auto;
+  margin: 5% auto;
 }
-.page a {
-  text-decoration: none;
-  color: black;
-}
-.page span {
+
+.redirect {
+  margin-bottom: 20px;
   display: flex;
+  justify-content: flex-start;
 }
+
 .allProjects {
   display: flex;
   flex-wrap: wrap;
-  margin: 5% auto;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  gap: 20px;
 }
+
+.projectLink {
+  text-decoration: none;
+  color: inherit;
+  width: calc(33.33% - 20px);
+}
+
 .project {
+  display: flex;
+  flex-direction: column;
   background: #f1f0ef;
   padding: 10px;
   border-radius: 8px;
-  text-align: left;
-  width: fit-content;
-  margin-bottom: 3%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 350px;
+  margin-bottom: 2%;
+}
+
+.projectImage {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.projectContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.projectTitle {
+  margin-top: 10px;
+  font-size: 1.2em;
+}
+
+.projectDescription {
+  margin: 10px 0;
 }
 </style>
