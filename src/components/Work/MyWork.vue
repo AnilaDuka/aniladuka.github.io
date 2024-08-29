@@ -20,9 +20,6 @@
           />
           <div class="projectContent">
             <h2 class="projectTitle">{{ project.name }}</h2>
-            <p class="projectDescription">
-              {{ truncateDescription(project.description) }}
-            </p>
           </div>
         </div>
       </router-link>
@@ -40,25 +37,17 @@ export default {
       projects,
     };
   },
-  methods: {
-    truncateDescription(description, wordLimit = 20) {
-      if (!description) return '';
-      const words = description.split(' ');
-      if (words.length <= wordLimit) return description;
-      return words.slice(0, wordLimit).join(' ') + '...';
-    },
-  },
 };
 </script>
 
 <style scoped>
 .page {
   width: 80%;
-  margin: 5% auto;
+  margin: 3% auto;
 }
 
 .redirect {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   display: flex;
   justify-content: flex-start;
 }
@@ -79,11 +68,7 @@ export default {
 .project {
   display: flex;
   flex-direction: column;
-  background: #f1f0ef;
   padding: 10px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  height: 350px;
   margin-bottom: 2%;
 }
 

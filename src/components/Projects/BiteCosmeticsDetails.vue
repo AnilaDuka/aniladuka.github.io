@@ -19,10 +19,9 @@
       <div class="projectDetails">
         <h1>{{ projects[0].name }}</h1>
         <p>{{ projects[0].description }}</p>
-        <p>{{ keyRequirements }}</p>
-        <p>{{ development }}</p>
-        <p>{{ quality }}</p>
-        <p>{{ deployment }}</p>
+        <a href="https://github.com/AnilaDuka/BiteCosmetics" target="_blank"
+          >Bite Cosmetics</a
+        >
       </div>
     </div>
   </div>
@@ -44,14 +43,7 @@ export default {
   data() {
     return {
       home: 'Home < ',
-      keyRequirements: 'Key responsibilities and achievements included:',
-      development:
-        'Feature Development: I designed and implemented new features for SPIM Fashion, closely aligning with client requirements to enhance the platform’s functionality and user experience.',
-      quality:
-        'Quality Assurance: I wrote and executed comprehensive tests using Cypress to ensure the reliability and performance of new features. This testing process was crucial in maintaining high-quality standards and preventing issues before deployment.',
-      deployment:
-        'Deployment: I managed the end-to-end deployment of new features, ensuring seamless integration and smooth operation in the live environment.',
-      projects: projects.filter((project) => project.name === 'Spim SaaS'),
+      projects: projects.filter((project) => project.name === 'Bite Cosmetics'),
     };
   },
 };
@@ -60,7 +52,7 @@ export default {
 <style scoped>
 .page {
   width: 90%;
-  margin: 3% auto;
+  margin: 4% auto;
 }
 
 .projectContainer {
