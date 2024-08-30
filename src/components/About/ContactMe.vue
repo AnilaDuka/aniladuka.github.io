@@ -29,24 +29,51 @@
       <div class="form-row submit-row">
         <button type="submit" class="form-submit">Submit</button>
       </div>
+      <div v-if="successMessage" class="success-message">
+        {{ successMessage }}
+      </div>
     </form>
   </div>
 </template>
 
 <script>
+import emailjs from 'emailjs-com';
+
 export default {
   data() {
     return {
       name: '',
       email: '',
       message: '',
+      successMessage: '', // Added property for success message
     };
   },
   methods: {
     submitForm() {
-      alert(
-        `Name: ${this.name}\nEmail: ${this.email}\nMessage: ${this.message}`
-      );
+      const templateParams = {
+        name: this.name,
+        email: this.email,
+        message: this.message,
+      };
+
+      emailjs
+        .send(
+          'service_h1mdfiq',
+          'template_c9d1b1x',
+          templateParams,
+          'YHjbt9m2fON0RaDE1'
+        )
+        .then(() => {
+          this.successMessage = 'Message sent successfully!';
+          this.name = '';
+          this.email = '';
+          this.message = '';
+        })
+        .catch((error) => {
+          console.error('Error sending message:', error);
+          this.successMessage =
+            'Failed to send message. Please try again later.';
+        });
     },
   },
 };
@@ -58,6 +85,11 @@ export default {
   border-radius: 8px;
   max-width: 600px;
   margin: 5% auto;
+}
+
+.success-message {
+  color: green;
+  margin-top: 10px;
 }
 
 .form-row {
