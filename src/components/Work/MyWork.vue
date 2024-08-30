@@ -8,8 +8,8 @@
     <div class="allProjects">
       <router-link
         v-for="project in projects"
-        :to="project.route"
-        :key="project.name"
+        :to="'/projects/' + project.slug"
+        :key="project.slug"
         class="projectLink"
       >
         <div class="project">

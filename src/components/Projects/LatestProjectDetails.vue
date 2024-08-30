@@ -4,10 +4,11 @@
       <router-link to="/">{{ home }}</router-link>
       <router-link to="/my-projects"><span>Projects</span></router-link>
     </div>
-    <div class="projectContainer">
-      <div class="projectSlides">
+    <!-- Only render projectContainer if project is loaded -->
+    <div class="projectContainer" v-if="project">
+      <div class="projectSlides" v-if="projectImages.length">
         <carousel :items-to-show="1">
-          <slide v-for="(image, index) in projects[0].images" :key="index">
+          <slide v-for="(image, index) in projectImages" :key="index">
             <img :src="image" :alt="'Slide ' + (index + 1)" />
           </slide>
           <template #addons>
@@ -17,19 +18,24 @@
         </carousel>
       </div>
       <div class="projectDetails">
-        <h1>{{ projects[0].name }}</h1>
-        <p>{{ projects[0].description }}</p>
-        <p>{{ keyRequirements }}</p>
-        <p>{{ development }}</p>
-        <p>{{ quality }}</p>
-        <p>{{ deployment }}</p>
+        <h1>{{ project.name }}</h1>
+        <p>{{ project.description }}</p>
+        <div v-if="project.name === 'Spim SaaS'">
+          <p>{{ keyRequirements }}</p>
+          <p>{{ development }}</p>
+          <p>{{ quality }}</p>
+          <p>{{ deployment }}</p>
+        </div>
+        <div v-if="project.name === 'DigIT Website'">
+          <p>{{ addition }}</p>
+        </div>
+        <a :href="project.link" target="_blank">{{ project.name }}</a>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-// If you are using PurgeCSS, make sure to whitelist the carousel CSS classes
 import 'vue3-carousel/dist/carousel.css';
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
 import { projects } from '@/projects';
@@ -44,6 +50,8 @@ export default {
   data() {
     return {
       home: 'Home < ',
+      project: null,
+      addition: `In addition to the development, I focused on optimizing the website's SEO. This included adding meta tags and descriptions that align with SEO best practices, and creating a sitemap.xml to improve search engine indexing. My efforts in these areas have contributed to better visibility and performance of the website in search engines. Overall, the project showcases a comprehensive approach to web development, from design implementation to functionality and SEO optimization.`,
       keyRequirements: 'Key responsibilities and achievements included:',
       development:
         'Feature Development: I designed and implemented new features for SPIM Fashion, closely aligning with client requirements to enhance the platform’s functionality and user experience.',
@@ -51,8 +59,25 @@ export default {
         'Quality Assurance: I wrote and executed comprehensive tests using Cypress to ensure the reliability and performance of new features. This testing process was crucial in maintaining high-quality standards and preventing issues before deployment.',
       deployment:
         'Deployment: I managed the end-to-end deployment of new features, ensuring seamless integration and smooth operation in the live environment.',
-      projects: projects.filter((project) => project.name === 'Spim SaaS'),
     };
+  },
+  computed: {
+    projectImages() {
+      if (this.project) {
+        if (Array.isArray(this.project.images)) {
+          return this.project.images;
+        } else if (this.project.images) {
+          return [this.project.images];
+        }
+      }
+      return [];
+    },
+  },
+  created() {
+    // Find the project based on the route parameter 'slug'
+    this.project = projects.find(
+      (project) => project.slug === this.$route.params.slug
+    );
   },
 };
 </script>
@@ -60,30 +85,25 @@ export default {
 <style scoped>
 .page {
   width: 90%;
-  margin: 3% auto;
+  margin: 4% auto;
 }
-
 .projectContainer {
   display: flex;
   gap: 50px;
 }
-
 .redirect {
   display: flex;
   width: 90%;
   justify-content: flex-start;
 }
-
 .projectSlides {
   width: 60%;
 }
-
 .projectDetails {
   width: 50%;
   text-align: left;
   line-height: 1.7em;
 }
-
 img {
   width: 100%;
   height: fit-content;
