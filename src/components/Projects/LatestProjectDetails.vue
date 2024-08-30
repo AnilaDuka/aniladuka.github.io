@@ -4,10 +4,9 @@
       <router-link to="/">{{ home }}</router-link>
       <router-link to="/my-projects"><span>Projects</span></router-link>
     </div>
-    <!-- Only render projectContainer if project is loaded -->
     <div class="projectContainer" v-if="project">
       <div class="projectSlides" v-if="projectImages.length">
-        <carousel :items-to-show="1">
+        <carousel v-if="projectImages.length > 1" :items-to-show="1">
           <slide v-for="(image, index) in projectImages" :key="index">
             <img :src="image" :alt="'Slide ' + (index + 1)" />
           </slide>
@@ -16,6 +15,9 @@
             <pagination />
           </template>
         </carousel>
+        <div v-else>
+          <img :src="projectImages[0]" alt="Project Image" />
+        </div>
       </div>
       <div class="projectDetails">
         <h1>{{ project.name }}</h1>
@@ -85,7 +87,7 @@ export default {
 <style scoped>
 .page {
   width: 90%;
-  margin: 4% auto;
+  margin: 5.5% auto;
 }
 .projectContainer {
   display: flex;
@@ -120,7 +122,6 @@ img {
   }
   .projectSlides {
     width: 100%;
-    height: 100%;
   }
   .projectDetails {
     width: 100%;
