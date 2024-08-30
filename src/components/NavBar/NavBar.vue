@@ -6,23 +6,17 @@
         <span>aniladukaa@gmail.com</span>
       </a>
     </div>
-    <div @click="scrollToContact">
-      <button class="cv">Contact</button>
+    <div class="links socials">
+      <a href="https://www.linkedin.com/in/anila-duka/" target="_blank"
+        >Linkedin</a
+      >
+      <a href="https://github.com/AnilaDuka" target="_blank">GitHub</a>
     </div>
   </nav>
 </template>
 
 <script>
-export default {
-  methods: {
-    scrollToContact() {
-      const contactSection = document.getElementById('contact');
-      if (contactSection) {
-        contactSection.scrollIntoView({ behavior: 'smooth' });
-      }
-    },
-  },
-};
+export default {};
 </script>
 
 <style scoped>
@@ -47,6 +41,19 @@ nav {
   border-radius: 50px;
   height: 40px;
   width: 100px;
-  background: white;
+  background: black;
+  color: white;
+  border: none;
+}
+
+@media screen and (max-width: 700px) {
+  .cv {
+    width: 75px;
+    height: 35px;
+  }
+
+  .socials {
+    display: none;
+  }
 }
 </style>

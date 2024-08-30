@@ -29,7 +29,7 @@ export default {
 <style scoped>
 .slider {
   width: 100%;
-  margin-top: 10%;
+  margin-top: 7%;
   background: #f1f0ef;
   border-radius: 0px 0px 30px 30px;
   height: 170px;
@@ -38,5 +38,20 @@ export default {
 }
 .slider img {
   margin-right: 110px;
+}
+
+@media screen and (max-width: 700px) {
+  .slider img {
+    width: 4% !important;
+  }
+  .slider {
+    width: 100%;
+    margin-top: 17%;
+    background: #f1f0ef;
+    border-radius: 0px 0px 30px 30px;
+    height: 145px;
+    display: flex;
+    align-items: center;
+  }
 }
 </style>

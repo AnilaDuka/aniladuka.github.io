@@ -94,4 +94,17 @@ export default {
 .projectDescription {
   margin: 10px 0;
 }
+
+@media screen and (max-width: 700px) {
+  .allProjects {
+    display: flex;
+    flex-direction: column;
+  }
+  .projectLink {
+    width: calc(104.33% - 20px);
+  }
+  .redirect {
+    margin: 30px 0px;
+  }
+}
 </style>

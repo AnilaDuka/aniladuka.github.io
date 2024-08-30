@@ -40,4 +40,23 @@ footer {
   text-decoration: none;
   color: black;
 }
+
+@media screen and (max-width: 700px) {
+  .footerContent {
+    width: 95%;
+    height: 100%;
+    margin: auto;
+    align-items: center;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .links {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+  }
+  .copyright {
+    margin-bottom: 10px;
+  }
+}
 </style>

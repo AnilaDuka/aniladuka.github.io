@@ -83,7 +83,7 @@ export default {
 .contact-form {
   padding: 20px;
   border-radius: 8px;
-  max-width: 600px;
+  width: 35%;
   margin: 5% auto;
 }
 
@@ -135,5 +135,31 @@ export default {
 
 .form-submit:hover {
   background-color: #333;
+}
+
+@media screen and (max-width: 700px) {
+  .contact-form {
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    margin: 5% auto;
+  }
+  .form-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0px;
+  }
+  .form-input {
+    margin: 0px 0px 15px 0px;
+  }
+  .form-textarea {
+    width: 90%;
+    padding: 15px;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    resize: vertical;
+    min-height: 100px;
+    margin-bottom: 15px;
+  }
 }
 </style>

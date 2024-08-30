@@ -28,6 +28,7 @@ export const projects = [
   `,
     thumbnail: spimSaaSImageThumbnail,
     images: [SpimSaasImage, spimSaasImage2],
+    link: null,
     route: '/spim-saas',
   },
   {
@@ -37,6 +38,7 @@ export const projects = [
   `,
     thumbnail: digitWebsiteImageThumbnail,
     image: digitWebsiteImage,
+    link: 'digitbusiness.ch',
     route: '/digit-website',
   },
   {
@@ -46,6 +48,7 @@ export const projects = [
   `,
     thumbnail: spimWebsiteImageThumbnail,
     image: spimWebsiteImage,
+    link: 'spim.app',
     route: '/spim-website',
   },
   {
@@ -62,6 +65,7 @@ export const projects = [
       biteCosmetics5,
       biteCosmetics6,
     ],
+    link: 'BiteCosmetics',
     route: '/bite-cosmetics',
   },
   {
@@ -71,6 +75,7 @@ export const projects = [
   `,
     thumbnail: hmdEcommerceImageThumbnail,
     images: [hmdEcommerceImage, hmdEcommerceImage2],
+    link: 'handmadedresses.no',
     route: '/hmd-ecommerce',
   },
   {
@@ -79,6 +84,7 @@ export const projects = [
   `,
     thumbnail: cielImageThumbnail,
     image: cielImage,
+    link: null,
     route: '/ciel-website',
   },
 ];

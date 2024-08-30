@@ -1,6 +1,9 @@
 <template>
   <div class="page">
-    <h1>A Frontend developer...</h1>
+    <h1 class="serviceIntro">
+      Crafting High-Performance Web Solutions<br class="br" />
+      with a Focus on User Experience
+    </h1>
     <div class="cards">
       <div class="card">
         <img src="@/assets/images/dev.svg" alt="" />
@@ -20,11 +23,6 @@
         <p>{{ seo }}</p>
       </div>
     </div>
-    <div class="work">
-      <router-link to="/my-projects"
-        ><button id="work">View Work</button></router-link
-      >
-    </div>
   </div>
 </template>
 
@@ -33,7 +31,7 @@ export default {
   data() {
     return {
       webDevelopment:
-        'I create engaging web applications and websites using Vue.js to deliver seamless user experiences. My work focuses on building responsive and intuitive solutions tailored to meet client needs.',
+        'I create engaging web applications and websites to deliver seamless user experiences. My work focuses on building responsive and intuitive solutions tailored to meet client needs.',
       ecommerce:
         'I develop robust e-commerce solutions with platforms like Shopify. My focus is on creating streamlined, user-friendly online stores and implementing secure payment methods to drive sales.',
       seo: 'I optimize websites for better search engine visibility, improving rankings and user engagement. My approach ensures both new and existing sites perform at their best in search results.',
@@ -44,7 +42,7 @@ export default {
 
 <style lang="scss" scoped>
 .page {
-  margin: 5% auto !important;
+  margin: 7% auto !important;
   width: 90%;
 }
 .cards {
@@ -54,35 +52,38 @@ export default {
   flex-wrap: wrap;
 }
 .card {
-  width: 25%;
+  width: 20%;
   padding: 20px;
   border-radius: 8px;
-  color: black;
+  color: rgb(47, 47, 47);
   font-size: 14px;
   text-align: left;
 }
-.work {
-  display: flex;
-  justify-content: center;
-  margin-top: 3%;
+.serviceIntro {
+  margin-bottom: 3%;
 }
-.work a {
-  text-decoration: none;
-}
-#work {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  background: black;
-  border-radius: 6px;
-  color: white;
-  padding: 10px;
-  width: 120px;
-  height: 44px;
-  font-size: 16px;
-}
-#work:hover {
-  background-color: #333;
+
+@media screen and (max-width: 700px) {
+  .serviceIntro {
+    margin: 15% 0%;
+    font-size: 23px;
+  }
+  .br {
+    display: none;
+  }
+  .cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .card {
+    width: 70%;
+    padding: 20px;
+    border-radius: 8px;
+    color: rgb(47, 47, 47);
+    font-size: 14px;
+    text-align: left;
+  }
 }
 </style>
