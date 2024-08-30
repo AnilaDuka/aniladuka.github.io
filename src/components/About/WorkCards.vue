@@ -78,7 +78,7 @@ export default {
     align-items: center;
   }
   .card {
-    width: 70%;
+    width: 85%;
     padding: 20px;
     border-radius: 8px;
     color: rgb(47, 47, 47);
