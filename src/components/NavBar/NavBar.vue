@@ -47,11 +47,13 @@ nav {
 }
 
 @media screen and (max-width: 700px) {
+  nav {
+    padding: 5% 2%;
+  }
   .cv {
     width: 75px;
     height: 35px;
   }
-
   .socials {
     display: none;
   }

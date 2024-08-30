@@ -142,7 +142,7 @@ export default {
     padding: 20px;
     border-radius: 8px;
     width: 80%;
-    margin: 5% auto;
+    margin: 10% auto;
   }
   .form-row {
     display: flex;

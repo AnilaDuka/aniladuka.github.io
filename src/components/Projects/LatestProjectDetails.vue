@@ -104,9 +104,41 @@ export default {
   text-align: left;
   line-height: 1.7em;
 }
+.projectDetails p {
+  font-size: 16px;
+}
 img {
   width: 100%;
   height: fit-content;
   display: block;
+}
+
+@media screen and (max-width: 700px) {
+  .projectContainer {
+    display: flex;
+    flex-direction: column;
+  }
+  .projectSlides {
+    width: 100%;
+    height: 100%;
+  }
+  .projectDetails {
+    width: 100%;
+    text-align: left;
+    line-height: 1.7em;
+    margin-bottom: 30px;
+  }
+  .redirect {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    margin: 30px 0px;
+  }
+  .projectDetails p {
+    font-size: 14px;
+  }
+  .projectDetails h1 {
+    font-size: 22px;
+  }
 }
 </style>
