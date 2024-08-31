@@ -1,5 +1,7 @@
 # portfolio
 
+A portfolio showcasing my web development projects, skills, and professional information.
+
 ## Project setup
 ```
 npm install
