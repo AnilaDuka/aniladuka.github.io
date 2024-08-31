@@ -32,26 +32,6 @@ export const projects = [
     link: null,
   },
   {
-    slug: 'digit-website',
-    name: 'DigIT Website',
-    description: `
-    I independently developed the DigIT website using Vue.js, transforming a detailed UI/UX design into a fully functional, responsive website. The site features a multilingual interface with three languages, powered by Vue i18n for seamless translations. I implemented a fully functional contact form and ensured that the entire site is responsive across various devices.
-  `,
-    thumbnail: digitWebsiteImageThumbnail,
-    images: digitWebsiteImage,
-    link: 'https://www.digitbusiness.ch/',
-  },
-  {
-    slug: 'spim-website',
-    name: 'Spim Website',
-    description: `
-    I developed the SPIM website from scratch, transforming the provided UI/UX designs into a high-functioning, responsive website using Vue.js. The site includes a fully operational contact form and adheres to SEO best practices, with carefully crafted meta tags, descriptions, and a sitemap to enhance search engine visibility. The project reflects my ability to translate design into code while ensuring both functionality and optimization for search engines.
-  `,
-    thumbnail: spimWebsiteImageThumbnail,
-    images: spimWebsiteImage,
-    link: 'https://www.spim.app/',
-  },
-  {
     slug: 'bite-cosmetics',
     name: 'Bite Cosmetics',
     description: `
@@ -77,6 +57,26 @@ export const projects = [
     thumbnail: hmdEcommerceImageThumbnail,
     images: [hmdEcommerceImage, hmdEcommerceImage2],
     link: 'https://handmadedresses.no/',
+  },
+  {
+    slug: 'digit-website',
+    name: 'DigIT Website',
+    description: `
+    I independently developed the DigIT website using Vue.js, transforming a detailed UI/UX design into a fully functional, responsive website. The site features a multilingual interface with three languages, powered by Vue i18n for seamless translations. I implemented a fully functional contact form and ensured that the entire site is responsive across various devices.
+  `,
+    thumbnail: digitWebsiteImageThumbnail,
+    images: digitWebsiteImage,
+    link: 'https://www.digitbusiness.ch/',
+  },
+  {
+    slug: 'spim-website',
+    name: 'Spim Website',
+    description: `
+    I developed the SPIM website from scratch, transforming the provided UI/UX designs into a high-functioning, responsive website using Vue.js. The site includes a fully operational contact form and adheres to SEO best practices, with carefully crafted meta tags, descriptions, and a sitemap to enhance search engine visibility. The project reflects my ability to translate design into code while ensuring both functionality and optimization for search engines.
+  `,
+    thumbnail: spimWebsiteImageThumbnail,
+    images: spimWebsiteImage,
+    link: 'https://www.spim.app/',
   },
   {
     slug: 'ciel-website',

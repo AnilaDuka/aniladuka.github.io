@@ -93,7 +93,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .page {
   width: 90%;
   margin: 5.5% auto;
@@ -121,9 +121,9 @@ export default {
 }
 img {
   width: 100%;
-  height: auto; /* Ensures that the image maintains its aspect ratio */
+  height: auto;
   display: block;
-  object-fit: cover; /* Ensures the image covers the container */
+  object-fit: cover;
 }
 
 .projectSlides {
@@ -132,7 +132,7 @@ img {
 }
 
 .projectSlides img {
-  max-height: 100%; /* Ensures the image doesn't exceed the height of its container */
+  max-height: 100%;
 }
 
 h1 {
@@ -146,7 +146,7 @@ h1 {
   }
   .projectSlides {
     width: 100%;
-    height: auto; /* Allow the container to adjust to the image height */
+    height: auto;
   }
   .projectDetails {
     width: 100%;
@@ -166,16 +166,5 @@ h1 {
   .projectDetails h1 {
     font-size: 22px;
   }
-  /*.carousel__track {
-    margin: 0px;
-  }
-  .carousel__viewport {
-    height: 10%;
-  }
-  .carousel {
-    position: absolute;
-    top: -400px;
-    height: 200px;
-  }*/
 }
 </style>
