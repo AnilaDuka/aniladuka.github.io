@@ -6,15 +6,20 @@
     </div>
     <div class="projectContainer" v-if="project">
       <div class="projectSlides" v-if="projectImages.length">
-        <carousel v-if="projectImages.length > 1" :items-to-show="1">
-          <slide v-for="(image, index) in projectImages" :key="index">
+        <swiper
+          :style="{
+            '--swiper-navigation-color': '#000',
+          }"
+          v-if="projectImages.length > 1"
+          :slides-per-view="1"
+          :pagination="{ clickable: true }"
+          :navigation="true"
+          :centered-slides="true"
+        >
+          <swiper-slide v-for="(image, index) in projectImages" :key="index">
             <img :src="image" :alt="'Slide ' + (index + 1)" />
-          </slide>
-          <template #addons>
-            <navigation />
-            <pagination />
-          </template>
-        </carousel>
+          </swiper-slide>
+        </swiper>
         <div v-else>
           <img :src="projectImages[0]" alt="Project Image" />
         </div>
@@ -38,16 +43,21 @@
 </template>
 
 <script>
-import 'vue3-carousel/dist/carousel.css';
-import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
+import 'swiper/swiper-bundle.css';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Navigation, Pagination } from 'swiper';
 import { projects } from '@/projects';
 
 export default {
   components: {
-    Carousel,
-    Slide,
-    Pagination,
-    Navigation,
+    Swiper,
+    SwiperSlide,
+  },
+  setup() {
+    return {
+      Navigation,
+      Pagination,
+    };
   },
   data() {
     return {
@@ -76,7 +86,6 @@ export default {
     },
   },
   created() {
-    // Find the project based on the route parameter 'slug'
     this.project = projects.find(
       (project) => project.slug === this.$route.params.slug
     );
@@ -97,6 +106,7 @@ export default {
   display: flex;
   width: 90%;
   justify-content: flex-start;
+  margin: 30px 0px;
 }
 .projectSlides {
   width: 60%;
@@ -111,8 +121,22 @@ export default {
 }
 img {
   width: 100%;
-  height: fit-content;
+  height: auto; /* Ensures that the image maintains its aspect ratio */
   display: block;
+  object-fit: cover; /* Ensures the image covers the container */
+}
+
+.projectSlides {
+  width: 60%;
+  position: relative;
+}
+
+.projectSlides img {
+  max-height: 100%; /* Ensures the image doesn't exceed the height of its container */
+}
+
+h1 {
+  margin: 0px;
 }
 
 @media screen and (max-width: 700px) {
@@ -122,6 +146,7 @@ img {
   }
   .projectSlides {
     width: 100%;
+    height: auto; /* Allow the container to adjust to the image height */
   }
   .projectDetails {
     width: 100%;
@@ -141,5 +166,16 @@ img {
   .projectDetails h1 {
     font-size: 22px;
   }
+  /*.carousel__track {
+    margin: 0px;
+  }
+  .carousel__viewport {
+    height: 10%;
+  }
+  .carousel {
+    position: absolute;
+    top: -400px;
+    height: 200px;
+  }*/
 }
 </style>

@@ -1,7 +1,9 @@
 <template>
   <nav>
     <div class="links">
-      <a href="/Anila Duka - CV.pdf"><button class="cv">CV</button></a>
+      <a href="/Anila DukaCVPortfolio.pdf" target="_blank"
+        ><button class="cv">CV</button></a
+      >
       <a href="mailto: aniladukaa@gmail.com">
         <span>aniladukaa@gmail.com</span>
       </a>
