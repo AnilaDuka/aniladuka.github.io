@@ -19,7 +19,7 @@
 
       <div class="card">
         <img src="@/assets/images/dev.svg" alt="" />
-        <h2>Seo</h2>
+        <h2>SEO</h2>
         <p>{{ seo }}</p>
       </div>
     </div>
