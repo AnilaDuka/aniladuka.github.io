@@ -1,6 +1,6 @@
 # portfolio
 
-A portfolio showcasing my web development projects, skills, and professional information.
+A portfolio showcasing my development projects, skills, and professional information.
 
 ## Project setup
 ```
