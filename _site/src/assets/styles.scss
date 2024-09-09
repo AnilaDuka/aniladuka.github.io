@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'Ortteco';
+    src: url('@/assets/fonts/Otterco-Medium.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  body {
+    font-family: 'Ortteco', sans-serif;
+  }
+
+  .redirect a {
+    text-decoration: none;
+    color: black;
+  }
