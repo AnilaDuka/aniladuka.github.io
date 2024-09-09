@@ -1,0 +1,10 @@
+source "https://rubygems.org" 
+
+gem "jekyll", "~> 4.3.0"
+gem "jekyll-feed"
+gem "logger"
+gem "csv"
+gem "base64"
+gem "bigdecimal"
+gem "ostruct"
+gem "listen", "~> 3.0"
