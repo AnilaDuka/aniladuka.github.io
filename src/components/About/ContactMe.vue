@@ -45,7 +45,7 @@ export default {
       name: '',
       email: '',
       message: '',
-      successMessage: '', // Added property for success message
+      successMessage: '',
     };
   },
   methods: {
@@ -79,7 +79,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .contact-form {
   padding: 20px;
   border-radius: 8px;
@@ -97,12 +97,17 @@ export default {
   margin-bottom: 15px;
 }
 
-.form-input {
+.form-input,
+.form-textarea {
   flex: 1;
-  margin-right: 10px;
   padding: 15px;
   border: 1px solid lightgray;
   border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.form-input {
+  margin-right: 10px;
 }
 
 .form-input:last-child {
@@ -110,10 +115,6 @@ export default {
 }
 
 .form-textarea {
-  width: 100%;
-  padding: 15px;
-  border: 1px solid lightgray;
-  border-radius: 4px;
   resize: vertical;
   min-height: 100px;
 }
@@ -137,6 +138,30 @@ export default {
   background-color: #333;
 }
 
+@media screen and (min-width: 1000px) and (max-width: 1300px) {
+  .contact-form {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .contact-form {
+    width: 60%;
+  }
+  .form-row {
+    flex-direction: column;
+  }
+
+  .form-input {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .form-textarea {
+    margin-bottom: 15px;
+  }
+}
+
 @media screen and (max-width: 700px) {
   .contact-form {
     padding: 20px;
@@ -144,22 +169,9 @@ export default {
     width: 80%;
     margin: 10% auto;
   }
-  .form-row {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 0px;
-  }
-  .form-input {
-    margin: 0px 0px 15px 0px;
-  }
+
   .form-textarea {
-    width: 90%;
-    padding: 15px;
-    border: 1px solid lightgray;
-    border-radius: 4px;
-    resize: vertical;
-    min-height: 100px;
-    margin-bottom: 15px;
+    width: 100%;
   }
 }
 </style>

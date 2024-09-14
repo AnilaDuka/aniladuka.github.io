@@ -26,7 +26,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .slider {
   width: 100%;
   margin-top: 7%;

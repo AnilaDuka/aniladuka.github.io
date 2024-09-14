@@ -26,7 +26,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .introductory {
   width: 80%;
   margin: auto;
@@ -70,6 +70,13 @@ export default {
 }
 #work:hover {
   background-color: #333;
+}
+
+@media screen and (min-width: 700px) and (max-width: 1350px) {
+  .info {
+    width: 60%;
+    margin: auto;
+  }
 }
 
 @media screen and (max-width: 700px) {

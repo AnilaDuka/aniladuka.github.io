@@ -18,45 +18,44 @@
 export default {};
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 footer {
   height: 150px;
   background: #f1f0ef;
-  border-radius: 40px 40px 0px 0px;
-}
-.footerContent {
-  width: 90%;
-  height: 100%;
-  margin: auto;
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-}
-.links {
-  display: flex;
-  gap: 30px;
-}
-.links a {
-  text-decoration: none;
-  color: black;
+  border-radius: 40px 40px 0 0;
+
+  .footerContent {
+    width: 90%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .links {
+      display: flex;
+      gap: 30px;
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 700px) {
   .footerContent {
     width: 95%;
-    height: 100%;
-    margin: auto;
-    align-items: center;
-    display: flex;
     flex-direction: column-reverse;
-  }
-  .links {
-    display: flex;
-    gap: 30px;
-    margin-top: 30px;
-  }
-  .copyright {
-    margin-bottom: 10px;
+
+    .links {
+      margin-top: 30px;
+    }
+
+    .copyright {
+      margin-bottom: 10px;
+    }
   }
 }
 </style>

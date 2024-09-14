@@ -40,7 +40,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .page {
   width: 80%;
   margin: 3% auto;
@@ -70,6 +70,7 @@ export default {
   flex-direction: column;
   padding: 10px;
   margin-bottom: 2%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .projectImage {
@@ -93,6 +94,12 @@ export default {
 
 .projectDescription {
   margin: 10px 0;
+}
+
+@media screen and (min-width: 700px) and (max-width: 1200px) {
+  .projectLink {
+    width: calc(50% - 20px);
+  }
 }
 
 @media screen and (max-width: 700px) {

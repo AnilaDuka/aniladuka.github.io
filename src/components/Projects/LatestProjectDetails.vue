@@ -7,6 +7,7 @@
     <div class="projectContainer" v-if="project">
       <div class="projectSlides" v-if="projectImages.length">
         <swiper
+          :modules="[Navigation, Pagination]"
           :style="{
             '--swiper-navigation-color': '#000',
           }"
@@ -45,7 +46,7 @@
 <script>
 import 'swiper/swiper-bundle.css';
 import { Swiper, SwiperSlide } from 'swiper/vue';
-import { Navigation, Pagination } from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
 import { projects } from '@/projects';
 
 export default {
@@ -139,7 +140,7 @@ h1 {
   margin: 0px;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 1200px) {
   .projectContainer {
     display: flex;
     flex-direction: column;

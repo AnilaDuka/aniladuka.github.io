@@ -52,7 +52,7 @@ export default {
   flex-wrap: wrap;
 }
 .card {
-  width: 20%;
+  width: 22%;
   padding: 20px;
   border-radius: 8px;
   color: rgb(47, 47, 47);
@@ -61,6 +61,18 @@ export default {
 }
 .serviceIntro {
   margin-bottom: 3%;
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1300px) {
+  .card {
+    width: 26%;
+  }
+}
+
+@media screen and (min-width: 700px) and (max-width: 1000px) {
+  .card {
+    width: 40%;
+  }
 }
 
 @media screen and (max-width: 700px) {
