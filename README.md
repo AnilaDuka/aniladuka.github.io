@@ -1,27 +1,33 @@
-# portfolio
+# Portfolio - Anila Duka
 
-A portfolio showcasing my development projects, skills, and professional information.
+This is my personal portfolio website showcasing some of my work as a frontend developer. The website is built with Vue.js and includes responsive design, project highlights, and a contact form for inquiries.
 
-## Project setup
-```
-npm install
-```
+## Features
+- Portfolio of personal and work projects.
+- Contact form for reaching out directly.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Project Setup
 
-### Compiles and minifies for production
-```
-npm run build
-```
+### Installation
 
-### Lints and fixes files
-```
-npm run lint
-```
+ Install dependencies:
+    ```bash
+    npm install
+    ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-"Rebuild" 
+### Commands
+
+- Start the development server:
+    ```bash
+    npm run serve
+    ```
+
+- Build for production:
+    ```bash
+    npm run build
+    ```
+
+- Lint and fix files:
+    ```bash
+    npm run lint
+    ```
