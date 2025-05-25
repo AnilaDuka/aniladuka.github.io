@@ -5,38 +5,44 @@
       <router-link to="/my-projects"><span>Projects</span></router-link>
     </div>
     <div class="projectContainer" v-if="project">
-      <div class="projectSlides" v-if="projectImages.length">
+      <div class="projectSlides" v-if="projectSlides.length">
+
+        <video
+          v-if="projectSlides.length === 1 && isVideo(projectSlides[0])"
+          :src="projectSlides[0]"
+          controls
+          style="width: 100%; max-height: 400px; object-fit: contain;"
+        ></video>
+      
         <swiper
+          v-else
           :modules="[Navigation, Pagination]"
-          :style="{
-            '--swiper-navigation-color': '#000',
-          }"
-          v-if="projectImages.length > 1"
+          :style="{'--swiper-navigation-color': '#000'}"
           :slides-per-view="1"
           :pagination="{ clickable: true }"
           :navigation="true"
           :centered-slides="true"
         >
-          <swiper-slide v-for="(image, index) in projectImages" :key="index">
-            <img :src="image" :alt="'Slide ' + (index + 1)" />
+          <swiper-slide v-for="(slide, index) in projectSlides" :key="slide + '-' + index">
+            <video
+              v-if="isVideo(slide)"
+              :src="slide"
+              controls
+              style="width: 100%; max-height: 400px; object-fit: contain;"
+            ></video>
+            <img
+              v-else
+              :src="slide"
+              :alt="'Slide ' + (index + 1)"
+              style="width: 100%; max-height: 400px; object-fit: contain;"
+            />
           </swiper-slide>
         </swiper>
-        <div v-else>
-          <img :src="projectImages[0]" alt="Project Image" />
-        </div>
+      
       </div>
       <div class="projectDetails">
         <h1>{{ project.name }}</h1>
-        <p>{{ project.description }}</p>
-        <div v-if="project.name === 'Spim SaaS'">
-          <p>{{ keyRequirements }}</p>
-          <p>{{ development }}</p>
-          <p>{{ quality }}</p>
-          <p>{{ deployment }}</p>
-        </div>
-        <div v-if="project.name === 'DigIT Website'">
-          <p>{{ addition }}</p>
-        </div>
+        <p style="white-space: pre-line">{{ project.description }}</p>
         <a :href="project.link" target="_blank">{{ project.name }}</a>
       </div>
     </div>
@@ -54,36 +60,30 @@ export default {
     Swiper,
     SwiperSlide,
   },
-  setup() {
-    return {
-      Navigation,
-      Pagination,
-    };
-  },
   data() {
     return {
       home: 'Home < ',
       project: null,
-      addition: `In addition to the development, I focused on optimizing the website's SEO. This included adding meta tags and descriptions that align with SEO best practices, and creating a sitemap.xml to improve search engine indexing. My efforts in these areas have contributed to better visibility and performance of the website in search engines. Overall, the project showcases a comprehensive approach to web development, from design implementation to functionality and SEO optimization.`,
-      keyRequirements: 'Key responsibilities and achievements included:',
-      development:
-        'Feature Development: I designed and implemented new features for SPIM Fashion, closely aligning with client requirements to enhance the platform’s functionality and user experience.',
-      quality:
-        'Quality Assurance: I wrote and executed comprehensive tests using Cypress to ensure the reliability and performance of new features. This testing process was crucial in maintaining high-quality standards and preventing issues before deployment.',
-      deployment:
-        'Deployment: I managed the end-to-end deployment of new features, ensuring seamless integration and smooth operation in the live environment.',
+      Navigation,
+      Pagination,
     };
   },
   computed: {
-    projectImages() {
-      if (this.project) {
-        if (Array.isArray(this.project.images)) {
-          return this.project.images;
-        } else if (this.project.images) {
-          return [this.project.images];
-        }
+    projectSlides() {
+      if (!this.project) return [];
+      let slides = [];
+
+      if (Array.isArray(this.project.images)) {
+        slides = [...this.project.images];
+      } else if (this.project.images) {
+        slides = [this.project.images];
       }
-      return [];
+
+      if (this.project.video && typeof this.project.video === 'string') {
+        slides.push(this.project.video);
+      }
+
+      return slides;
     },
   },
   created() {
@@ -91,8 +91,14 @@ export default {
       (project) => project.slug === this.$route.params.slug
     );
   },
+  methods: {
+    isVideo(slide) {
+      return typeof slide === 'string' && slide.endsWith('.mp4');
+    },
+  },
 };
 </script>
+
 
 <style scoped lang="scss">
 .page {

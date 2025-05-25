@@ -22,9 +22,23 @@ import airbnbImage from "@/assets/images/airbnbImage.svg";
 import layoffsImageThumbnail from "@/assets/images/layoffsImageThumbnail.svg";
 import layoffsImage from "@/assets/images/layoffsImage.svg";
 import cryptoAnalyzerThumbnail from "@/assets/images/cryptoAnalyzerThumbnail.svg";
-import cryptoAnalyzer from "@/assets/images/cryptoAnalyzer.svg"
+import cryptoAnalyzer from "@/assets/images/cryptoAnalyzer.svg";
+import atkScraperThumbnail from "@/assets/images/atkScraperThumbnail.svg";
 
 export const projects = [
+    {
+      slug: "atk-scraper-gui",
+      name: "ATK Business Data Scraper (GUI)",
+      description: `
+      ATK Business Data Scraper is a Python-based desktop application that enables users to extract public business information from the official Kosovo Tax Administration (ATK) VAT registry website.
+      Designed with non-technical users in mind, the tool features a clean and intuitive graphical interface built with Tkinter. By entering a business number, users can quickly retrieve company details
+      The application uses Selenium to automate browser actions and OpenPyXL to export the data to an Excel file. CAPTCHA validation is handled manually by the user to comply with the website’s anti-bot mechanisms.
+      Key Features:\n- Simple GUI\n- No manual website navigation\n- Automated data export to Excel
+      `,
+      thumbnail: atkScraperThumbnail,
+      video: '/atk-scraper-demo.mp4',
+      link: "https://github.com/AnilaDuka/ATK-Business-Data-Scraper-GUI",
+    },
     {
     slug: "crypto-analyzer",
     name: "Automating Crypto API Analyzer",
@@ -60,8 +74,10 @@ export const projects = [
     name: "Spim SaaS",
     description: `
     In my role working with SPIM SaaS, I developed and enhanced this sophisticated web application platform, particularly within the SPIM Fashion module.
-
     My role required an understanding of Vue.js and a strong commitment to delivering high-quality software. Through these efforts, I contributed significantly to the platform’s success and the satisfaction of our clients.
+    Key responsibilities and achievements included:
+    Feature Development: I designed and implemented new features for SPIM Fashion, closely aligning with client requirements to enhance the platform’s functionality and user experience.
+    Quality Assurance: I wrote and executed comprehensive tests using Cypress to ensure the reliability and performance of new features. This testing process was crucial in maintaining high-quality standards and preventing issues before deployment.
   `,
     thumbnail: spimSaaSImageThumbnail,
     images: [SpimSaasImage, spimSaasImage2],
@@ -99,6 +115,8 @@ export const projects = [
     name: "DigIT Website",
     description: `
     I independently developed the DigIT website using Vue.js, transforming a detailed UI/UX design into a fully functional, responsive website. The site features a multilingual interface with three languages, powered by Vue i18n for seamless translations. I implemented a fully functional contact form and ensured that the entire site is responsive across various devices.
+
+    In addition to the development, I focused on optimizing the website's SEO. This included adding meta tags and descriptions that align with SEO best practices, and creating a sitemap.xml to improve search engine indexing. My efforts in these areas have contributed to better visibility and performance of the website in search engines. Overall, the project showcases a comprehensive approach to web development, from design implementation to functionality and SEO optimization.
   `,
     thumbnail: digitWebsiteImageThumbnail,
     images: digitWebsiteImage,
