@@ -20,6 +20,12 @@ export default {
     WorkCards,
     ContactMe,
   },
+  mounted() {
+    const projectSlug = this.$route.query.project;
+    if (projectSlug) {
+      this.$router.replace({ path: `/projects/${projectSlug}` });
+    }
+  }
 };
 </script>
 

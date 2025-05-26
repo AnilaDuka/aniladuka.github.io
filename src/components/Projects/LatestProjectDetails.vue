@@ -1,8 +1,7 @@
 <template>
   <div class="page">
     <div class="redirect">
-      <router-link to="/">{{ home }}</router-link>
-      <router-link to="/my-projects"><span>Projects</span></router-link>
+      <router-link to="/my-projects"><span>← All Projects</span></router-link>
     </div>
     <div class="projectContainer" v-if="project">
       <div class="projectSlides" v-if="projectSlides.length">
@@ -11,7 +10,7 @@
           v-if="projectSlides.length === 1 && isVideo(projectSlides[0])"
           :src="projectSlides[0]"
           controls
-          style="width: 100%; max-height: 400px; object-fit: contain;"
+          style="width: 100%; max-height: 100%; object-fit: contain;"
         ></video>
       
         <swiper
@@ -62,7 +61,6 @@ export default {
   },
   data() {
     return {
-      home: 'Home < ',
       project: null,
       Navigation,
       Pagination,

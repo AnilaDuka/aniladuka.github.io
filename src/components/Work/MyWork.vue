@@ -33,7 +33,7 @@ import { projects } from '@/projects';
 export default {
   data() {
     return {
-      back: 'Return to Homepage',
+      back: '← Back to Main Page',
       projects,
     };
   },
